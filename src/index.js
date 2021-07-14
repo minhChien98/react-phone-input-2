@@ -837,6 +837,10 @@ class PhoneInput extends React.Component {
       'hide': !showDropdown
     });
 
+    const handleBlurSearch = () =>{
+      this.setState({ searchValue: '' });
+    }
+
     return (
       <ul
         ref={el => {
@@ -873,6 +877,7 @@ class PhoneInput extends React.Component {
               })}
               style={searchStyle}
               type='search'
+              onBlur={handleBlurSearch}
               placeholder={searchPlaceholder}
               autoFocus={true}
               autoComplete={autocompleteSearch ? 'on' : 'off'}
